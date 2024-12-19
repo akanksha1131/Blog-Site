@@ -24,7 +24,7 @@ public class UsernameController {
             Class.forName("com.mysql.jdbc.Driver"); // Use correct JDBC driver for your database
             connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "your_username", "your_password");
 
-            // Secure SELECT query using prepared statements
+            // SELECT query using prepared statements
             String sqlQuery = "SELECT 1 FROM users WHERE username = ?";
             preparedStatement = connect.prepareStatement(sqlQuery);
             preparedStatement.setString(1, username);
